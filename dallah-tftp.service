@@ -1,0 +1,12 @@
+[Unit]
+Description=Dallah tftp server
+Requires=dallah-tftp.socket
+Documentation=man:in.tftpd
+
+[Service]
+ExecStart=/usr/sbin/in.tftpd  -c -p -s /home/tftproot/
+StandardInput=socket
+
+[Install]
+WantedBy=multi-user.target
+Also=dallah-tftp.socket
