@@ -1,0 +1,1105 @@
+
+
+
+# ### sample forwarding rule ###
+#action(type="omfwd"
+# An on-disk queue is created for this action. If the remote host is
+# down, messages are spooled to disk and sent when it is up again.
+#queue.filename="fwdRule1"       # unique name prefix for spool files
+#queue.maxdiskspace="1g"         # 1gb space limit (use as much as possible)
+#queue.saveonshutdown="on"       # save messages to disk on shutdown
+#queue.type="LinkedList"         # run asynchronously
+#action.resumeRetryCount="-1"    # infinite retries if host is down
+# Remote Logging (we use TCP for reliable delivery)
+# remote_host is: name/ip, e.g. 192.168.0.1, port optional e.g. 10514
+#Target="remote_host" Port="XXX" Protocol="tcp")
+[root@NM1APVTESTS1-CONTROL network]# :q!
+bash: :q!: command not found...
+[root@NM1APVTESTS1-CONTROL network]#
+[root@NM1APVTESTS1-CONTROL network]#
+[root@NM1APVTESTS1-CONTROL network]# vi 6th-playbook.yml
+[root@NM1APVTESTS1-CONTROL network]# vi /etc/ansible/playbooks/6th-playbook.yml
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# systemctl status rsyslog.service
+? rsyslog.service - System Logging Service
+   Loaded: loaded (/usr/lib/systemd/system/rsyslog.service; enabled; vend>
+   Active: active (running) since Sun 2021-11-21 21:19:45 +03; 8s ago
+     Docs: man:rsyslogd(8)
+           https://www.rsyslog.com/doc/
+ Main PID: 2686376 (rsyslogd)
+    Tasks: 1 (limit: 100946)
+   Memory: 948.0K
+   CGroup: /system.slice/rsyslog.service
+           +-2686376 /usr/sbin/rsyslogd -n
+
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: error during pars>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL systemd[1]: Started System Logging S>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: error during pars>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: error during pars>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: action 'imjournal>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: error during pars>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: input module name>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: error during pars>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: invalid or yet-un>
+Nov 21 21:19:45 NM1APVTESTS1-CONTROL rsyslogd[2686376]: [origin software=>
+[root@NM1APVTESTS1-CONTROL ~]# systemctl status firewalld.service
+? firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; ve>
+   Active: inactive (dead) since Thu 2021-11-11 13:14:08 +03; 1 weeks 3 d>
+     Docs: man:firewalld(1)
+ Main PID: 2540655 (code=exited, status=0/SUCCESS)
+
+Nov 11 11:50:55 NM1APVTESTS1-CONTROL systemd[1]: Starting firewalld - dyn>
+Nov 11 11:50:56 NM1APVTESTS1-CONTROL systemd[1]: Started firewalld - dyna>
+Nov 11 11:50:56 NM1APVTESTS1-CONTROL firewalld[2540655]: WARNING: AllowZo>
+Nov 11 11:55:27 NM1APVTESTS1-CONTROL firewalld[2540655]: WARNING: ALREADY>
+Nov 11 13:14:07 NM1APVTESTS1-CONTROL systemd[1]: Stopping firewalld - dyn>
+Nov 11 13:14:08 NM1APVTESTS1-CONTROL systemd[1]: firewalld.service: Succe>
+Nov 11 13:14:08 NM1APVTESTS1-CONTROL systemd[1]: Stopped firewalld - dyna>
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# ls -lh /home/cisco/network/Nakheel-gateway.log
+-rwxrwxrwx. 1 root root 0 Nov 17 13:42 /home/cisco/network/Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL ~]# ls -lh /home/cisco/network/Nakheel-gateway.log
+-rwxrwxrwx. 1 root root 0 Nov 17 13:42 /home/cisco/network/Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf                       [root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service          [root@NM1APVTESTS1-CONTROL ~]# ls -lh /home/cisco/network/Nakheel-gateway.log
+-rwxrwxrwx. 1 root root 0 Nov 17 13:42 /home/cisco/network/Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service          [root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf                       [root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# ls -lh /home/cisco/network/Nakheel-gateway.log
+-rwxrwxrwx. 1 root root 0 Nov 17 13:42 /home/cisco/network/Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL ~]# ls -lh /home/cisco/network/Nakheel-gateway.log
+-rwxrwxrwx. 1 root root 0 Nov 17 13:42 /home/cisco/network/Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# cp /etc/rsyslog.conf /home/tftproot/rsyslog.conf.changed2
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# yum remove rsyslog -y
+Dependencies resolved.
+==========================================================================
+ Package           Arch      Version                  Repository     Size
+==========================================================================
+Removing:
+ rsyslog           x86_64    8.1911.0-7.el8_4.2       @appstream    2.3 M
+Removing dependent packages:
+ rsyslog-gnutls    x86_64    8.1911.0-7.el8_4.2       @appstream     46 k
+ rsyslog-gssapi    x86_64    8.1911.0-7.el8_4.2       @appstream     54 k
+ rsyslog-relp      x86_64    8.1911.0-7.el8_4.2       @appstream     54 k
+Removing unused dependencies:
+ libestr           x86_64    0.1.10-1.el8             @AppStream     45 k
+ libfastjson       x86_64    0.99.8-2.el8             @AppStream     69 k
+ librelp           x86_64    1.2.16-1.el8             @AppStream    166 k
+
+Transaction Summary
+==========================================================================
+Remove  7 Packages
+
+Freed space: 2.7 M
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                  1/1
+  Running scriptlet: rsyslog-relp-8.1911.0-7.el8_4.2.x86_64           1/1
+  Erasing          : rsyslog-relp-8.1911.0-7.el8_4.2.x86_64           1/7
+  Erasing          : rsyslog-gssapi-8.1911.0-7.el8_4.2.x86_64         2/7
+  Erasing          : rsyslog-gnutls-8.1911.0-7.el8_4.2.x86_64         3/7
+  Running scriptlet: rsyslog-8.1911.0-7.el8_4.2.x86_64                4/7
+  Erasing          : rsyslog-8.1911.0-7.el8_4.2.x86_64                4/7
+warning: /etc/rsyslog.conf saved as /etc/rsyslog.conf.rpmsave
+
+  Running scriptlet: rsyslog-8.1911.0-7.el8_4.2.x86_64                4/7
+  Erasing          : libestr-0.1.10-1.el8.x86_64                      5/7
+  Running scriptlet: libestr-0.1.10-1.el8.x86_64                      5/7
+  Erasing          : libfastjson-0.99.8-2.el8.x86_64                  6/7
+  Running scriptlet: libfastjson-0.99.8-2.el8.x86_64                  6/7
+  Erasing          : librelp-1.2.16-1.el8.x86_64                      7/7
+  Running scriptlet: librelp-1.2.16-1.el8.x86_64                      7/7
+  Verifying        : libestr-0.1.10-1.el8.x86_64                      1/7
+  Verifying        : libfastjson-0.99.8-2.el8.x86_64                  2/7
+  Verifying        : librelp-1.2.16-1.el8.x86_64                      3/7
+  Verifying        : rsyslog-8.1911.0-7.el8_4.2.x86_64                4/7
+  Verifying        : rsyslog-gnutls-8.1911.0-7.el8_4.2.x86_64         5/7
+  Verifying        : rsyslog-gssapi-8.1911.0-7.el8_4.2.x86_64         6/7
+  Verifying        : rsyslog-relp-8.1911.0-7.el8_4.2.x86_64           7/7
+Installed products updated.
+
+Removed:
+  libestr-0.1.10-1.el8.x86_64
+  libfastjson-0.99.8-2.el8.x86_64
+  librelp-1.2.16-1.el8.x86_64
+  rsyslog-8.1911.0-7.el8_4.2.x86_64
+  rsyslog-gnutls-8.1911.0-7.el8_4.2.x86_64
+  rsyslog-gssapi-8.1911.0-7.el8_4.2.x86_64
+  rsyslog-relp-8.1911.0-7.el8_4.2.x86_64
+
+Complete!
+[root@NM1APVTESTS1-CONTROL ~]# systemctl status rsyslog.service
+Unit rsyslog.service could not be found.
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# yum install rsyslog -y
+CentOS Linux 8 - AppStream                6.6 kB/s | 4.3 kB     00:00
+CentOS Linux 8 - AppStream                949 kB/s | 8.1 MB     00:08
+CentOS Linux 8 - BaseOS                   6.3 kB/s | 3.9 kB     00:00
+CentOS Linux 8 - BaseOS                   814 kB/s | 3.5 MB     00:04
+CentOS Linux 8 - Extras                   2.3 kB/s | 1.5 kB     00:00
+Extra Packages for Enterprise Linux Modul  18 kB/s | 9.4 kB     00:00
+Extra Packages for Enterprise Linux 8 - x  24 kB/s | 9.5 kB     00:00
+Extra Packages for Enterprise Linux 8 - x 891 kB/s |  11 MB     00:12
+Dependencies resolved.
+==========================================================================
+ Package          Arch        Version                Repository      Size
+==========================================================================
+Installing:
+ rsyslog          x86_64      8.2102.0-5.el8         appstream      752 k
+Installing dependencies:
+ libestr          x86_64      0.1.10-1.el8           appstream       27 k
+ libfastjson      x86_64      0.99.9-1.el8           appstream       38 k
+
+Transaction Summary
+==========================================================================
+Install  3 Packages
+
+Total download size: 817 k
+Installed size: 2.5 M
+Downloading Packages:
+(1/3): libfastjson-0.99.9-1.el8.x86_64.rp  81 kB/s |  38 kB     00:00
+(2/3): libestr-0.1.10-1.el8.x86_64.rpm     41 kB/s |  27 kB     00:00
+(3/3): rsyslog-8.2102.0-5.el8.x86_64.rpm  627 kB/s | 752 kB     00:01
+--------------------------------------------------------------------------
+Total                                     537 kB/s | 817 kB     00:01
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                  1/1
+  Installing       : libfastjson-0.99.9-1.el8.x86_64                  1/3
+  Running scriptlet: libfastjson-0.99.9-1.el8.x86_64                  1/3
+  Installing       : libestr-0.1.10-1.el8.x86_64                      2/3
+  Running scriptlet: libestr-0.1.10-1.el8.x86_64                      2/3
+  Installing       : rsyslog-8.2102.0-5.el8.x86_64                    3/3
+  Running scriptlet: rsyslog-8.2102.0-5.el8.x86_64                    3/3
+  Verifying        : libestr-0.1.10-1.el8.x86_64                      1/3
+  Verifying        : libfastjson-0.99.9-1.el8.x86_64                  2/3
+  Verifying        : rsyslog-8.2102.0-5.el8.x86_64                    3/3
+Installed products updated.
+
+Installed:
+  libestr-0.1.10-1.el8.x86_64        libfastjson-0.99.9-1.el8.x86_64
+  rsyslog-8.2102.0-5.el8.x86_64
+
+Complete!
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl stop firewalld
+[root@NM1APVTESTS1-CONTROL ~]# systemctl start rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# systemctl status rsyslog.service
+? rsyslog.service - System Logging Service
+   Loaded: loaded (/usr/lib/systemd/system/rsyslog.service; enabled; vend>
+   Active: active (running) since Sun 2021-11-21 21:40:06 +03; 5s ago
+     Docs: man:rsyslogd(8)
+           https://www.rsyslog.com/doc/
+ Main PID: 2687288 (rsyslogd)
+    Tasks: 1 (limit: 100946)
+   Memory: 828.0K
+   CGroup: /system.slice/rsyslog.service
+           +-2687288 /usr/sbin/rsyslogd -n
+
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: unknown priority >
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: action 'StateFile>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: error during pars>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: error during pars>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: error during pars>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: action 'imjournal>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: error during pars>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: input module name>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: error during pars>
+Nov 21 21:40:06 NM1APVTESTS1-CONTROL rsyslogd[2687288]: [origin software=>
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+[root@NM1APVTESTS1-CONTROL ~]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL ~]# systemctl status rsyslog.service
+? rsyslog.service - System Logging Service
+   Loaded: loaded (/usr/lib/systemd/system/rsyslog.service; enabled; vend>
+   Active: active (running) since Sun 2021-11-21 21:53:32 +03; 8s ago
+     Docs: man:rsyslogd(8)
+           https://www.rsyslog.com/doc/
+ Main PID: 2687697 (rsyslogd)
+    Tasks: 3 (limit: 100946)
+   Memory: 1.1M
+   CGroup: /system.slice/rsyslog.service
+           +-2687697 /usr/sbin/rsyslogd -n
+
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL systemd[1]: Stopped System Logging S>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL systemd[1]: Starting System Logging >
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: action 'StateFile>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: error during pars>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL systemd[1]: Started System Logging S>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: error during pars>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: error during pars>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: action 'imjournal>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: error during pars>
+Nov 21 21:53:32 NM1APVTESTS1-CONTROL rsyslogd[2687697]: [origin software=>
+[root@NM1APVTESTS1-CONTROL ~]# cd /etc/logrotate.d/
+[root@NM1APVTESTS1-CONTROL logrotate.d]# ls
+bootlog  firewalld      Nakheel-gateway.log  sssd                  wtmp
+btmp     iscsiuiolog    networklog.conf      subscription-manager
+chrony   kvm_stat       numad                syslog
+cups     libvirtd       psacct               vsftpd
+dnf      libvirtd.qemu  samba                wpa_supplicant
+[root@NM1APVTESTS1-CONTROL logrotate.d]# vi Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL logrotate.d]# vi Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL logrotate.d]# systemctl restart logrotate.service
+Failed to restart logrotate.service: Unit logrotate.service not found.
+[root@NM1APVTESTS1-CONTROL logrotate.d]# cd /etc/logrotate.d/
+[root@NM1APVTESTS1-CONTROL logrotate.d]# ls
+bootlog  firewalld      Nakheel-gateway.log  sssd                  wtmp
+btmp     iscsiuiolog    networklog.conf      subscription-manager
+chrony   kvm_stat       numad                syslog
+cups     libvirtd       psacct               vsftpd
+dnf      libvirtd.qemu  samba                wpa_supplicant
+[root@NM1APVTESTS1-CONTROL logrotate.d]# vi Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/*
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/*
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# vi Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL logrotate.d]# vi Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/*
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/*
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/*
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# vi Nakheel-gateway.log
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/*
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/* | wc
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+      0       0       0
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/* | grep new state | wc -l
+grep: state: No such file or directory
+0
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/* | wc -l
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+0
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/* | wc -l
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+0
+[root@NM1APVTESTS1-CONTROL logrotate.d]# systemctl restart rsyslog.service
+[root@NM1APVTESTS1-CONTROL logrotate.d]# logrotate -d /home/cisco/* | wc -l
+WARNING: logrotate in debug mode does nothing except printing debug messages!  Consider using verbose mode (-v) instead if this is not what you want.
+
+error: Ignoring /home/cisco/conf-backup-CFG10-211121-0955.tar.gpg because the file owner is wrong (should be root or user with uid 0).
+reading config file 1
+error: 1:1 unknown option 'welcome' -- ignoring line
+Potentially dangerous mode on log_rotation.log: 0666
+error: Ignoring log_rotation.log because it is writable by group or others.
+Potentially dangerous mode on Nakheel-gateway.log: 0777
+error: Ignoring Nakheel-gateway.log because it is writable by group or others.
+Potentially dangerous mode on nakheel-vgw.log: 0777
+error: Ignoring nakheel-vgw.log because it is writable by group or others.
+reading config file rsyslog.conf.changed
+error: rsyslog.conf.changed:9 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:10 unknown option 'SysSock' -- ignoring line
+error: rsyslog.conf.changed:13 unknown option 'StateFile' -- ignoring line
+error: rsyslog.conf.changed:19 unknown option 'module' -- ignoring line
+error: rsyslog.conf.changed:20 unknown option 'input' -- ignoring line
+error: rsyslog.conf.changed:30 unknown option 'global' -- ignoring line
+error: rsyslog.conf.changed:33 unknown option 'module' -- ignoring line
+including (file="/etc/rsyslog.d/*.conf" mode="optional")
+error: cannot stat (file="/etc/rsyslog.d/*.conf" mode="optional"): No such file or directory
+error: rsyslog.conf.changed:46 lines must begin with a keyword or a filename (possibly in double quotes)
+error: rsyslog.conf.changed:66 lines must begin with a keyword or a filename (possibly in double quotes)
+error: found error in file rsyslog.conf.changed, skipping
+reading config file test_Rsync2.txt
+error: test_Rsync2.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync2.txt:2 unknown option 'This' -- ignoring line
+error: test_Rsync2.txt:3 lines must begin with a keyword or a filename (possibly in double quotes)
+reading config file test_Rsync3.txt
+error: test_Rsync3.txt:1 unknown option 'welcome' -- ignoring line
+error: test_Rsync3.txt:2 unknown option 'This' -- ignoring line
+reading config file test_Rsync.txt
+error: test_Rsync.txt:1 unknown option 'welcome' -- ignoring line
+Reading state from file: /var/lib/logrotate/logrotate.status
+Allocating hash table for state file, size 64 entries
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+Creating new state
+
+Handling 0 logs
+0
+[root@NM1APVTESTS1-CONTROL logrotate.d]# Connection reset by 10.100.5.190 port 22
+                                                                         ?
+
+ ? /home/mobaxterm ?
+ ? 22/11/2021 ? ? 00:26.20 ? ssh root@10.100.5.190
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Sun Nov 21 21:29:55 2021 from 192.168.131.39
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]#
+[root@NM1APVTESTS1-CONTROL ~]# vi /etc/rsyslog.conf
+# rsyslog configuration file
+
+# For more information see /usr/share/doc/rsyslog-*/rsyslog_conf.html
+# or latest version online at http://www.rsyslog.com/doc/rsyslog_conf.html
+# If you experience problems, see http://www.rsyslog.com/doc/troubleshoot.html
+
+#### MODULES ####
+
+module(load="imuxsock"    # provides support for local system logging (e.g. via logger command)
+       SysSock.Use="off") # Turn off message reception via local log socket;
+                          # local messages are retrieved through imjournal now.
+#module(load="imjournal"            # provides access to the systemd journal
+       StateFile="imjournal.state") # File to store the position in the journal
+#module(load="imklog") # reads kernel messages (the same are read from journald)
+#module(load="immark") # provides --MARK-- message capability
